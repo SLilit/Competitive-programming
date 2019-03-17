@@ -32,6 +32,25 @@ class Solution(object):
                 if s[i] not in s[:i]:
                     return i
             i += 1
+
+
+
+        if len(s) == 0:
+            return -1           
+            
+        uniques = set(s)
+        first_i = math.inf
+        unique = False
+        for char in uniques:
+            index = s.index(char)
+            if char not in s[:index] and char not in s[index+1:]:
+                unique = True
+                if index < first_i:
+                    first_i = index
+        if unique:
+            return first_i
+        else:
+            return -1
                 
         return index 
           
