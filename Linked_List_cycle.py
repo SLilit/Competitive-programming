@@ -19,3 +19,16 @@ class Solution(object):
             seen.add(head)
             head = head.next
         return False
+        
+
+        slow = head
+        fast = head.next
+        try:
+            while slow:
+                if slow == fast:
+                    return True
+                slow = slow.next
+                fast = fast.next.next
+        except:
+            return False
+        return False
