@@ -6,21 +6,20 @@
 
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
+       class Solution:
+    def removeElements(self, head: ListNode, val: int) -> ListNode:
+         
+        while head:
+            if head.val == val:
+                head = head.next
+            else:
+                break
+                
         if not head:
             return head
         
         pre = head
-        while pre:
-            if pre.val == val:
-                pre = pre.next
-            else:
-                break
-                
-        if not pre:
-            return pre
-        else:
-            head = pre
-            curr = pre.next
+        curr = head.next
             
         while curr:
             if curr.val == val:
@@ -30,3 +29,6 @@ class Solution:
                 pre = curr
                 curr = curr.next
         return head
+
+
+
