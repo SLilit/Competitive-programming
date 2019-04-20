@@ -7,6 +7,29 @@
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
 
+        num = head = ListNode(0)
+        l_sum = 0
+        
+        while l1 or l2:
+            
+            if l1:
+                l_sum += l1.val
+                l1 = l1.next
+            if l2:
+                l_sum += l2.val
+                l2 = l2.next
+                
+            head.next = ListNode(l_sum % 10)
+            head = head.next
+            l_sum //= 10
+            
+        if l_sum:
+            head.next = ListNode(l_sum)
+   
+        return num.next
+
+
+
         def helper(l, s):
             head = l
             l_sum = l.val + s
