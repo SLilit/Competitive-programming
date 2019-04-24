@@ -8,6 +8,7 @@ class Solution:
                 if a in B:
                     result.append(a)
             return result
+            
         n1 = set(nums1)
         n2 = set(nums2)
         if len(n1) > len(n2):
